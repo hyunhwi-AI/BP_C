@@ -138,19 +138,7 @@
 
 ---
 
-## 프로젝트 요약
-
-| 단계 | Report / PR | pytest | 핵심 성과 |
-|------|-------------|--------|-----------|
-| Mom Test·PRD | 01 · PR #1 spec | 테스트 없음 | Pain → 도메인 고정 · FR·SC |
-| ECB·Harness | 02 · PR #1 | — | Dual-Track · INTERFACES · Rule |
-| 전체 RED | 03 · PR #2 red | 7 failed, 4 passed | 스켈레톤 · D-CVT/U-IN RED |
-| GREEN | — · PR #3 green | 20 → 23 passed | converter·input·flow·ECB harness 8건 |
-| REFACTOR | 본 문서(04) · PR #4 | 23 passed (불변) | 파싱 DRY · registry SSOT · output 분리 |
-
----
-
-## 종합 한 줄
+## 총평
 
 **Keep:** 저는 문제 정의를 먼저 고정하고, Dual-Track TDD + Rule/Skill + ECB Harness로 AI와 함께 구현과 회귀를 통제한 점을 유지하고 싶습니다.  
 **Problem:** 반면 Test ID 단위 진행을 끝까지 엄격히 지키지 못했고, 문서 갱신·Mom Test 검증·네이밍 정리를 뒤늦게 처리한 점은 아쉽습니다.  
