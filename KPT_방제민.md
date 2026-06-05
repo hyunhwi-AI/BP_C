@@ -49,7 +49,9 @@ Mom Test, R-G-I-O, PRD, Harness, Rule, Command, RED/GREEN/REFACTOR, Golden Maste
 | P-06 | `/refactor-safe` 실행 시 Command 안에 이미 있는 규칙을 다시 길게 입력해야 하는지 헷갈렸다.                                                      |
 | P-07 | 리팩토링 단계에서 기능 추가, 버그 수정, 구조 개선의 경계가 모호해질 수 있었다.                                                                       |
 | P-08 | Architecture 테스트가 아직 부족해 SRP/OCP 위반을 테스트로 직접 보호하는 수준은 충분하지 않았다.                                                      |
-
+| P-09 | 시간 부족으로 팀원의 수정사항을 충분히 리뷰하지 못했고, 내 수정사항에 대해 팀원이 준 리뷰 피드백에도 충분히 대응하지 못했다.       |
+| P-10 | 리뷰를 언제, 어떤 기준으로, 어느 범위까지 해야 하는지에 대한 팀 그라운드룰이 없어 리뷰 우선순위가 뒤로 밀렸다.              |
+| P-11 | 코드 변경은 있었지만 PRD → 테스트 → 코드 → 리뷰 관점에서 서로 확인하는 시간이 부족해 C2C 추적성을 팀 단위로 검증하지 못했다. |
 ---
 
 ## 5. Try — 다음에 시도할 개선 행동
@@ -64,7 +66,11 @@ Mom Test, R-G-I-O, PRD, Harness, Rule, Command, RED/GREEN/REFACTOR, Golden Maste
 | T-06 | 리팩토링 전에는 반드시 `/refactor-smell`을 먼저 실행하고, 한 번에 스멜 1개만 처리한다.                                  |
 | T-07 | 다음 반복에서는 `T-ARCH-SRP-01`, `T-ARCH-OCP-01` 같은 Architecture 테스트를 추가해 구조 품질도 테스트로 보호한다.        |
 | T-08 | 추가 요구사항인 설정 파일 로드, 동적 단위 등록, JSON/CSV/table 출력 포맷은 각각 별도의 RED → GREEN → REFACTOR 사이클로 진행한다. |
-
+| T-09 | 다음 프로젝트에서는 작업 시작 전에 Code Review Ground Rules를 먼저 정한다.                                                                                     |
+| T-10 | 리뷰 요청 시 “변경 목적, 관련 PRD/테스트 ID, 확인해야 할 파일, 리뷰 요청 범위”를 함께 남긴다.                                                                              |
+| T-11 | 각 단계별로 리뷰 타임박스를 둔다. 예: RED 리뷰 5분, GREEN 리뷰 10분, REFACTOR 리뷰 10분.                                                                          |
+| T-12 | 리뷰어는 모든 코드를 다 보려 하지 말고, 이번 브랜치의 목적에 맞는 핵심만 확인한다. 예: RED에서는 테스트가 실패하는지, GREEN에서는 테스트 기대값을 바꾸지 않았는지, REFACTOR에서는 Golden Master가 유지되는지 확인한다. |
+| T-13 | 리뷰 피드백은 “반드시 반영 / 논의 필요 / 다음 사이클로 보류” 세 가지로 분류해 처리한다.                                                                                     |
 ---
 
 ## 6. Action Item
@@ -76,7 +82,10 @@ Mom Test, R-G-I-O, PRD, Harness, Rule, Command, RED/GREEN/REFACTOR, Golden Maste
 | A-03 | 다음 REPEAT 대상 선정          | 팀 공통  | 설정 파일 로드 / 동적 단위 등록 / 출력 포맷 중 1개를 다음 RED 대상으로 선택             |
 | A-04 | Refactor 결과 보고서 작성       | 문서 담당 | 적용한 RS-01~RS-03 결과, pytest 결과, Golden Master 결과가 Report에 기록됨 |
 | A-05 | 팀 리뷰 체크리스트 정리            | 리뷰어   | PRD → TC → Code → Golden Master 추적성 확인 항목이 체크리스트화됨           |
-
+| A-06 | 팀 Code Review Ground Rules 작성 | 팀 공통 | 리뷰 기준 5~7개가 문서화됨               |
+| A-07 | PR/브랜치 리뷰 체크리스트 작성            | 리뷰어  | RED/GREEN/REFACTOR별 확인 항목이 정리됨 |
+| A-08 | 리뷰 피드백 처리 규칙 합의               | 팀 공통 | 피드백을 “반영/논의/보류”로 분류하는 규칙이 생김   |
+| A-09 | 다음 프로젝트부터 리뷰 타임박스 운영          | 팀 리더 | 각 단계 종료 전 5~10분 리뷰 시간이 확보됨     |
 ---
 
 ## 7. 최종 회고 요약
